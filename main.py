@@ -11,10 +11,11 @@ from schemas import Idea as IdeaSchema, Comment as CommentSchema
 
 app = FastAPI(title="VibeCoders Ideas API")
 
+# Configure CORS. Note: allow_credentials=False when using wildcard origins.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
